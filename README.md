@@ -4,9 +4,6 @@ This application uses Lex, ElasticSearch, and Rekognition to create an intellige
 
 ![screenshot](Images/FrontEnd.PNG)
 
-## Architecture
-![screenshot](Images/Architecture.PNG)
-
 ## Steps:
 There are 5 components:
 
@@ -114,5 +111,19 @@ iii.	Upload new photos using the PUT /photos<br/>
 ### 8. Create a AWS CloudFormation template for the stack 
 #### a. Create a CloudFormation template (T1) to represent all the infrastructure resources (ex. Lambdas, ElasticSearch, API Gateway, CodePipeline, etc.) and permissions (IAM policies, roles, etc.).
 
+## Architecture
+![screenshot](Images/Architecture.PNG)
 
+## Acceptance criteria:
+1. Using the CloudFormation template (T1) you should be able to stand up the
+entire functional stack for this assignment.
+2. Once a new commit is pushed to GitHub (both for frontend and backend repos),
+CodePipeline should build and deploy your code to the corresponding AWS
+infrastructure.
+3. For a given photo and a given search query, a correct search (as defined in the
+assignment) should be able to return every photo that matches the query.
+Specifically, if Rekognition returns 12 labels for a given photo, your search
+should return the photo for any one of those 12 labels, if searched independently
+(“show me dogs”) or in groups (“show me cats and dogs”).
+4. All other functionality should be working as described above.
 
